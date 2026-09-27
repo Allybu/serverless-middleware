@@ -1,13 +1,12 @@
 Serverless Middleware
 =====================
-[![Serverless][serverless-badge]](serverless-badge-url)
-[![npm version][npm-version-badge]][npm-version-badge-url]
-[![npm monthly downloads][npm-downloads-badge]][npm-version-badge-url]
-[![Node.js CI](https://github.com/juanjoDiaz/serverless-middleware/actions/workflows/on-push.yaml/badge.svg)](https://github.com/juanjoDiaz/serverless-middleware/actions/workflows/on-push.yaml)
+[![Serverless][serverless-badge]][serverless-badge-url]
+[![Node.js CI](https://github.com/allybu/serverless-middleware/actions/workflows/on-push.yaml/badge.svg)](https://github.com/allybu/serverless-middleware/actions/workflows/on-push.yaml)
 [![Coverage Status][coveralls-badge]][coveralls-badge-url]
-[![license](https://img.shields.io/npm/l/serverless-middleware.svg)](https://raw.githubusercontent.com/juanjoDiaz/serverless-middleware/master/LICENSE)
 
 Serverless plugin to allow middleware handlers configured directly in serverless.yaml
+
+Fork of [serverless-middleware](https://github.com/juanjoDiaz/serverless-middleware) by [Juanjo Diaz](https://github.com/juanjoDiaz) to have better control of the supported runtime versions.
 
 ## Requirements:
 * Serverless v3
@@ -33,14 +32,14 @@ Serverless plugin to allow middleware handlers configured directly in serverless
 Install via npm in the root of your Serverless service:
 
 ```sh
-npm install serverless-middleware --save-dev
+npm install @allybu/serverless-middleware --save-dev
 ```
 
 Add the plugin to the `plugins` array in your Serverless `serverless.yaml`:
 
 ```yaml
 plugins:
-  - serverless-middleware
+  - '@allybu/serverless-middleware'
 ```
 
 ## How it works
@@ -201,7 +200,8 @@ This might be useful if you are using `sls package` and building your own artifa
 Passing an array to the handler property is not allowed anymore since Serverless is getting stricter with it's types and it also causes issues with Typescript.
 
 So
-```js
+
+```yaml
 functions:
   myFunction:
     handler:
@@ -213,8 +213,9 @@ functions:
         then: logger.log
         catch: utils.handlerLoggerError
 ```
+
 becomes
-```js
+```yaml
 functions:
   myFunction:
     custom:
@@ -244,8 +245,5 @@ This software is released under the MIT license. See [the license file](LICENSE)
 
 [serverless-badge]: http://public.serverless.com/badges/v3.svg
 [serverless-badge-url]: http://www.serverless.com
-[npm-version-badge]: https://badge.fury.io/js/serverless-middleware.svg
-[npm-version-badge-url]: https://www.npmjs.com/package/serverless-middleware
-[npm-downloads-badge]: https://img.shields.io/npm/dm/serverless-middleware.svg
-[coveralls-badge]: https://coveralls.io/repos/juanjoDiaz/serverless-middleware/badge.svg?branch=master
-[coveralls-badge-url]: https://coveralls.io/r/juanjoDiaz/serverless-middleware?branch=master
+[coveralls-badge]: https://coveralls.io/repos/github/Allybu/serverless-middleware/badge.svg?branch=main
+[coveralls-badge-url]: https://coveralls.io/github/Allybu/serverless-middleware?branch=main

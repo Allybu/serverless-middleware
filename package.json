@@ -1,8 +1,11 @@
 {
-	"name": "serverless-middleware",
+	"name": "@allybu/serverless-middleware",
 	"version": "3.5.0",
 	"description": "Serverless plugin to allow middleware handlers configured directly in serverless.yaml",
 	"main": "src/index.js",
+	"files": [
+		"src"
+	],
 	"scripts": {
 		"prepare": "husky",
 		"lint": "biome check .",
@@ -11,10 +14,13 @@
 		"test-with-coverage": "jest --coverage --collectCoverageFrom=src/**/*.js test"
 	},
 	"author": "Juanjo Diaz",
+	"contributors": [
+		"Alex"
+	],
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/juanjoDiaz/serverless-middleware.git"
+		"url": "git+https://github.com/allybu/serverless-middleware.git"
 	},
 	"keywords": [
 		"serverless",
@@ -22,9 +28,9 @@
 		"middleware"
 	],
 	"bugs": {
-		"url": "https://github.com/juanjoDiaz/serverless-middleware/issues"
+		"url": "https://github.com/allybu/serverless-middleware/issues"
 	},
-	"homepage": "https://github.com/juanjoDiaz/serverless-middleware",
+	"homepage": "https://github.com/allybu/serverless-middleware",
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.4",
 		"husky": "^9.1.7",
